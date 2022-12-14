@@ -9,6 +9,7 @@ const handlebars = require("express-handlebars");
 const clientSessions = require("client-sessions");
 var bcryptjs = require('bcryptjs');
 
+//cylic : https://wild-ruby-pelican-hat.cyclic.app/
 //id : yeonsu 
 //password : Jamong1225@
 const Schema = mongoose.Schema;
@@ -82,7 +83,7 @@ function ensureLogin(req, res, next) {
   };
 
 app.get("/admin", ensureLogin, function(req,res) {
-    res.render("Administrator", {layout:false});
+    res.render("admin", {layout:false});
 });
 
 app.post("/admin", function(req,res) {
